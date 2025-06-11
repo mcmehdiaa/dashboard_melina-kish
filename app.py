@@ -1,9 +1,8 @@
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# بارگذاری داده‌ها
+# بارگذاری داده‌ها از Google Sheets
 csv_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTASI7kKjouIBQffl3Cpkm5nKs9L8ionS1nFaJRXY-nJ5rjDpHVx-vjLxFTNtYAeQ/pub?output=csv"
 df = pd.read_csv(csv_url)
 
@@ -69,4 +68,3 @@ st.plotly_chart(fig_trend, use_container_width=True)
 # جدول اصلی
 st.subheader("📋 جدول فعالیت‌ها")
 st.dataframe(filtered_df, use_container_width=True)
-
