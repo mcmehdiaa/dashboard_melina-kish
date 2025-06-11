@@ -60,7 +60,7 @@ st.plotly_chart(fig2, use_container_width=True)
 st.subheader("📉 نمودار S Curve (EV / PV / AC)")
 timeline_df["PV"] = timeline_df["Planned Progress I"].cumsum()
 timeline_df["EV"] = timeline_df["Actual Progress I"].cumsum()
-timeline_df["AC"] = timeline_df["AC"].fillna(0).cumsum()  # اصلاح شد
+timeline_df["AC"] = timeline_df["Actual Cost"].fillna(0).cumsum()  # اصلاح شد
 fig3 = px.line(timeline_df, x="Start_Date", y=["PV", "EV", "AC"],
                labels={"value": "ارزش تجمعی", "Start_Date": "تاریخ"},
                color_discrete_map={"PV": "#1f77b4", "EV": "#ff7f0e", "AC": "#7f7f7f"})
